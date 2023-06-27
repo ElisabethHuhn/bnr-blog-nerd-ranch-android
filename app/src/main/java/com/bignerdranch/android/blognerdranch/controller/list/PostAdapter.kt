@@ -1,11 +1,9 @@
 package com.bignerdranch.android.blognerdranch.controller.list
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.bignerdranch.android.blognerdranch.databinding.ItemListContentBinding
 import com.bignerdranch.android.blognerdranch.model.PostMetadata
 
 class PostAdapter(
@@ -81,7 +79,7 @@ class PostAdapter(
             }
 
             override fun areContentsTheSame(oldItem: PostMetadata, newItem: PostMetadata): Boolean {
-                return oldItem.equals(newItem)
+                return oldItem == newItem
             }
         }
     }

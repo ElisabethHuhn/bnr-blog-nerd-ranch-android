@@ -7,4 +7,15 @@
 
     <string name="no_post_selected">No Post Selected</string>
 
+    <string name="list_title">Post List</string>
+    <string name="detail_title">Post Detail</string>
+    <string name="nav_instructions">Select any blog post</string>
+    <string name="no_title_available">No Title available</string>
+    <string name="no_author_available">No Author Available</string>
+    <string name="no_summary_available">No Summary Available</string>
+    <string name="no_pub_date_available">No Publish Date Available</string>
+
+    <string name="no_blog_text_available">No Blog text Available</string>
+    <string name="return_to_list_button">Return to List Screen</string>
+
 </resources>

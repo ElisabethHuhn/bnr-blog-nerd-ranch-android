@@ -1,10 +1,13 @@
 package com.bignerdranch.ktor.mockserver.routes
 
-import io.ktor.application.*
-import io.ktor.http.*
-import io.ktor.http.content.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import io.ktor.application.Application
+import io.ktor.application.call
+import io.ktor.http.HttpStatusCode
+import io.ktor.response.respondText
+import io.ktor.routing.Route
+import io.ktor.routing.get
+import io.ktor.routing.route
+import io.ktor.routing.routing
 
 fun Route.postMetadataRouting() {
     route("/post-metadata") {

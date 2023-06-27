@@ -1,11 +1,9 @@
 package com.bignerdranch.android.blognerdranch.controller.post
 
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.bignerdranch.android.blognerdranch.R
 import com.bignerdranch.android.blognerdranch.model.Post
 import com.bignerdranch.android.blognerdranch.viewmodel.BlogViewModelImpl

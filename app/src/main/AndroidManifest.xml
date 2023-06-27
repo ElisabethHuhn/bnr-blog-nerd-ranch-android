@@ -15,7 +15,7 @@
             android:usesCleartextTraffic="true"
             tools:targetApi="m">
         <activity
-            android:name=".controller.MainActivity"
+            android:name=".controller.MainActivityCompose"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

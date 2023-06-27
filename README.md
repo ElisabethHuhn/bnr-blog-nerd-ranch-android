@@ -8,6 +8,48 @@ you to be sure you fix, but how you choose to improve the app beyond that is
 entirely up to you. This lets you show your coding ability without being at
 a whiteboard or having someone look over your shoulder while you code.
 
+# Architecture Notes
+First off, I decided it would be easier to work with with a more standard Architecture so:
+* I added a viewModel for MVVM
+* And I hid retrofit behind a repository to hide the data source
+* I used flows to get the retrofit responses back to the view model
+* Initially I kept the idea of views, and converted the multiple Activity architecture to Fragments. 
+  * I'm not exactly sure what I did wrong here, but I got wrapped around the axel trying to get the fragments to work, with the multiple retrofit calls stringing through callbacks
+  * I'm sure I could have eventually gotten it working, but I knew how much easier Compose is
+* So I lept to Compose, coroutines, and flows 
+  * I ran into a bit of a gradle problem with compatibility between compose and kotlin
+  * But eventually got it sorted out.
+* I did a very small amount of prettifying the screen
+  * This is best left up to requirements/product
+  * Developer time is VERY expensive, and clients don't really want to pay for my straying outside of requirements
+  * So I left it there.
+
+I left much of the old (now unused) code in the repository just in case anyone was interested. Of course, this code should be refactored out:
+* In the controller package:
+  * All list classes
+    * FirstFragment
+    * PostAdapter
+    * PostListActivity
+    * PostViewHolder
+  * All post classes
+    * PostActivity
+    * SecondFragment
+  * Many of the LiveData variables used to get the retrofit data back to the Fragment UI can also be removed
+
+# Testing
+There are many types of tests:
+* Functional: Does the app do what it is supposed to
+* Performance: Does the app do what it is supposed to:
+  * fast enough
+  * with enough capacity
+* Accessibility: Is the app accessible to people from the disability community
+* Compatibility: Does the app work well on different devices and across API levels
+
+Functional are the most common.
+I did all the manual Functional testing that any developer should perform prior to passing code to QA
+ Much of the Functional testing can be automated. For example:
+* Assuring that retrofit calls are still working as anticipated
+
 # Blog app
 We've begun to build an app to showcase all our amazing content from our blog. A user of our app should
 be able to:
