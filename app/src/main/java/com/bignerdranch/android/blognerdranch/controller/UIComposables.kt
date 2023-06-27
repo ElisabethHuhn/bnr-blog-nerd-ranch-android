@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -85,8 +86,10 @@ fun MainNavGraph(
             ListScreen(
                 screenTitle = ListDestination.title,
                 onListSelect = {
-                    val toDes = DetailDestination.getNavigationListToDetail(it)
-                    navController.navigate(toDes)
+                    if (it.isDigitsOnly())  {
+                        val toDes = DetailDestination.getNavigationListToDetail(it)
+                        navController.navigate(toDes)
+                    }
                 },
                 viewModel = blogViewModel,
             )
