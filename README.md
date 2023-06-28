@@ -8,6 +8,11 @@ you to be sure you fix, but how you choose to improve the app beyond that is
 entirely up to you. This lets you show your coding ability without being at
 a whiteboard or having someone look over your shoulder while you code.
 
+# Architecture Discussion
+This initial solution attempted to expand on the original with a Fragment/Recyclerview solution
+Eventually I ran into enough challenges that it felt easier to just jump to Compose.
+The Compose solution is in the ComposeVersion branch
+
 # Blog app
 We've begun to build an app to showcase all our amazing content from our blog. A user of our app should
 be able to:
