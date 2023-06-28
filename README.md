@@ -24,17 +24,8 @@ First off, I decided it would be easier to work with with a more standard Archit
   * Developer time is VERY expensive, and clients don't really want to pay for my straying outside of requirements
   * So I left it there.
 
-I left much of the old (now unused) code in the repository just in case anyone was interested. Of course, this code should be refactored out:
-* In the controller package:
-  * All list classes
-    * FirstFragment
-    * PostAdapter
-    * PostListActivity
-    * PostViewHolder
-  * All post classes
-    * PostActivity
-    * SecondFragment
-  * Many of the LiveData variables used to get the retrofit data back to the Fragment UI can also be removed
+I left much of the old (now unused) code in the repository in a branch named FragmentVersion, just in case anyone was interested. Of course, this code should be refactored out:
+Unfortunately, somewhere along the way I screwed up the mockserver module. So as a work around I start up a version of the original project and start the mock server from there.
 
 # Testing
 There are many types of tests:
