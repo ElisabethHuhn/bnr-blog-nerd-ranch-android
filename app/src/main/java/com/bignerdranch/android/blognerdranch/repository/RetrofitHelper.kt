@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
 
-    val baseUrl = "http://10.0.2.2:8106/"  // "localhost" is the emulator's host. 10.0.2.2 goes to your computer
+    private const val baseUrl = "http://10.0.2.2:8106/"  // "localhost" is the emulator's host. 10.0.2.2 goes to your computer
 
     fun getInstance(): Retrofit {
         return Retrofit.Builder()

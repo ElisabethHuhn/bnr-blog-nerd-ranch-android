@@ -13,11 +13,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class BlogViewModelImpl() : ViewModel()
+class BlogViewModelImpl : ViewModel()
 {
-    val TAG = "BlogViewModel"
-
-    var repo : BlogRepositoryImpl = BlogRepositoryImpl()
+    private var repo : BlogRepositoryImpl = BlogRepositoryImpl()
 
     private var _postId: MutableLiveData<Int> = MutableLiveData<Int>(0)
     val currentPostId : LiveData<Int>
@@ -26,33 +24,15 @@ class BlogViewModelImpl() : ViewModel()
     private var _posts = MutableLiveData<List<PostMetadata>>()
     val posts : LiveData<List<PostMetadata>>
         get() = _posts
-
-    fun updatePosts(listPosts: List<PostMetadata>) {
-        _posts.value = listPosts
+    fun updatePosts(posts: List<PostMetadata>){
+        _posts.value = posts
     }
 
     private var _currentPost: MutableLiveData<Post?> = MutableLiveData<Post?>()
     val currentPost: LiveData<Post?>
         get() = _currentPost
-
-    fun updateCurrentPost(post: Post?) {
+    fun updateCurrentPost(post: Post?){
         _currentPost.value = post
-    }
-
-    private var _currentPostMeta: MutableLiveData<PostMetadata?> = MutableLiveData<PostMetadata?>()
-    val currentPostMeta: LiveData<PostMetadata?>
-        get() = _currentPostMeta
-
-    fun updateCurrentPostMeta(postMetadata: PostMetadata?) {
-        _currentPostMeta.value = postMetadata
-    }
-
-    var searchText = ""
-
-
-    init {
-        // Initialize the  data.
-//        fetchPosts()
     }
 
     //Calls to Retrofit
@@ -74,7 +54,7 @@ class BlogViewModelImpl() : ViewModel()
     //  define the code to execute upon request return
 
     //This callback is in response to fetchPosts (plural) and will trigger displaying the List Pane
-    val postsCallbackHandler = object: Callback<List<PostMetadata>?> {
+    private val postsCallbackHandler = object: Callback<List<PostMetadata>?> {
         override fun onFailure(call: Call<List<PostMetadata>?>, t: Throwable) {
             Log.e(PostListActivity.TAG, "Failed to load postMetadata", t)
         }
@@ -86,7 +66,7 @@ class BlogViewModelImpl() : ViewModel()
     }
 
     //This callback is in response to fetchPost (singular) and will trigger displaying the Detail Pane
-    val postCallbackHandler = object: Callback<Post?> {
+    private val postCallbackHandler = object: Callback<Post?> {
         override fun onFailure(call: Call<Post?>, t: Throwable) {
             Log.e(PostActivity.TAG, "Failed to load post", t)
         }
