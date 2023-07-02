@@ -13,6 +13,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -286,6 +287,7 @@ fun DetailScreen(
                     text = "Blog Post $postId is Loading",
                     fontSize = 20.sp,
                 )
+                CircularProgressIndicator()
             }
 
             Spacer(modifier = Modifier.height(5.0.dp))
